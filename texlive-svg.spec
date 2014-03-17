@@ -1,12 +1,12 @@
-# revision 27643
+# revision 33063
 # category Package
 # catalog-ctan /graphics/svg
-# catalog-date 2012-09-09 19:10:52 +0200
+# catalog-date 2014-02-26 23:03:13 +0100
 # catalog-license lppl1.3
 # catalog-version 1.0
 Name:		texlive-svg
 Version:	1.0
-Release:	6
+Release:	7
 Summary:	Include and extract SVG pictures using Inkscape
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/svg
@@ -22,12 +22,12 @@ Requires(post):	texlive-kpathsea
 %description
 The package provides a command similar to \includegraphics
 command of the graphicx package, which enables the inclusion of
-SVG images using Inkscape. \includesvg[options]{svg filename} A
-variety of options is available, including width, height, and
-path of the SVG. The image is converted to an appropriate
-format, using the \write18 mechanism to execute a shell
-command, and the package also offers the means of saving a PDF,
-EPS, or PNG copy of the image, at the same time. The
+SVG images using Inkscape. \includesvg[<options>]{<svg
+filename>} A variety of options is available, including width,
+height, and path of the SVG. The image is converted to an
+appropriate format, using the \write18 mechanism to execute a
+shell command, and the package also offers the means of saving
+a PDF, EPS, or PNG copy of the image, at the same time. The
 documentation shows an example using an SVG created from the
 high energy particle physics analysis package ROOT.
 
