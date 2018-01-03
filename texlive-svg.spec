@@ -1,12 +1,6 @@
-# revision 33063
-# category Package
-# catalog-ctan /graphics/svg
-# catalog-date 2014-02-26 23:03:13 +0100
-# catalog-license lppl1.3
-# catalog-version 1.0
 Name:		texlive-svg
-Version:	1.0
-Release:	11
+Version:	2.01
+Release:	1
 Summary:	Include and extract SVG pictures using Inkscape
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/svg
@@ -41,23 +35,10 @@ high energy particle physics analysis package ROOT.
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/latex/svg/svg.sty
-%doc %{_texmfdistdir}/doc/latex/svg/Fig.1a.pdf
-%doc %{_texmfdistdir}/doc/latex/svg/Fig.1b.eps
-%doc %{_texmfdistdir}/doc/latex/svg/Fig.2.pdf
-%doc %{_texmfdistdir}/doc/latex/svg/Fig.2.png
-%doc %{_texmfdistdir}/doc/latex/svg/README
-%doc %{_texmfdistdir}/doc/latex/svg/example.pdf
-%doc %{_texmfdistdir}/doc/latex/svg/example.pdf_tex
-%doc %{_texmfdistdir}/doc/latex/svg/example.svg
-%doc %{_texmfdistdir}/doc/latex/svg/preamble.tex
-%doc %{_texmfdistdir}/doc/latex/svg/root.C
-%doc %{_texmfdistdir}/doc/latex/svg/root.pdf
-%doc %{_texmfdistdir}/doc/latex/svg/root.pdf_tex
-%doc %{_texmfdistdir}/doc/latex/svg/root.svg
-%doc %{_texmfdistdir}/doc/latex/svg/svg.pdf
+%{_texmfdistdir}/tex/latex/svg
+%doc %{_texmfdistdir}/doc/latex/svg
 #- source
-%doc %{_texmfdistdir}/source/latex/svg/svg.dtx
+%doc %{_texmfdistdir}/source/latex/svg
 
 #-----------------------------------------------------------------------
 %prep
