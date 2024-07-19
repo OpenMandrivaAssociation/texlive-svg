@@ -1,6 +1,6 @@
 Name:		texlive-svg
-Version:	57010
-Release:	2
+Version:	70626
+Release:	1
 Summary:	Include and extract SVG pictures using Inkscape
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/svg
