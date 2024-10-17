@@ -3,7 +3,7 @@ Version:	70626
 Release:	1
 Summary:	Include and extract SVG pictures using Inkscape
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/graphics/svg
+URL:		https://www.ctan.org/tex-archive/graphics/svg
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/svg.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/svg.doc.r%{version}.tar.xz
