@@ -1,52 +1,38 @@
-Name:		texlive-svg
-Version:	70626
-Release:	1
-Summary:	Include and extract SVG pictures using Inkscape
+%global tl_name svg
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.02k
+Release:	%{tl_revision}.1
+Summary:	Include and extract SVG pictures in LaTeX documents
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/graphics/svg
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/svg.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/svg.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/svg.source.r%{version}.tar.xz
+License:	lppl1.3c
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/svg.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/svg.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/svg.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Requires:	texlive(graphics)
+Requires:	texlive(iftex)
+Requires:	texlive(koma-script)
+Requires:	texlive(pdftexcmds)
+Requires:	texlive(tools)
+Requires:	texlive(trimspaces)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides a command similar to \includegraphics
-command of the graphicx package, which enables the inclusion of
-SVG images using Inkscape. \includesvg[<options>]{<svg
-filename>} A variety of options is available, including width,
-height, and path of the SVG. The image is converted to an
-appropriate format, using the \write18 mechanism to execute a
-shell command, and the package also offers the means of saving
-a PDF, EPS, or PNG copy of the image, at the same time. The
-documentation shows an example using an SVG created from the
-high energy particle physics analysis package ROOT.
+This bundle contains the two packages svg and svg-extract. The svg
+package is intended for the automated integration of SVG graphics into
+LaTeX documents. Therefore the capabilities provided by Inkscape -- or
+more precisely its command line tool -- are used to export the text
+within an SVG graphic to a separate file, which is then rendered by
+LaTeX. For this purpose the two commands \includesvg and
+\includeinkscape are provided which are very similar to the
+\includegraphics command of the graphicx package. In addition, the
+package svg-extract allows the extraction of these graphics into
+independent files in different graphic formats, exactly as it is
+rendered within the LaTeX document, using either ImageMagick or
+Ghostscript.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/svg
-%doc %{_texmfdistdir}/doc/latex/svg
-#- source
-%doc %{_texmfdistdir}/source/latex/svg
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
